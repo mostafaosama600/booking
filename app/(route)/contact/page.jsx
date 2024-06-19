@@ -26,7 +26,7 @@ function Contact() {
     console.log(data);
     GlobalApi.contactus(data).then((resp) => {
       console.log(resp);
-      toast("Message has been sent");
+      toast("Message have been sent");
     });
   };
 
