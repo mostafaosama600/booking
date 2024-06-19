@@ -28,7 +28,6 @@ const getUserBookingList = (userEmail) =>
   );
 
 const deleteBooking = (id) => axiosClient.delete("/appointments/" + id);
-const sendEmail = (data) => axios.post("/api/sendEmail", data);
 const contactus = (data) => axiosClient.post("/contacts", data);
 
 export default {
@@ -39,6 +38,5 @@ export default {
   bookAppointment,
   getUserBookingList,
   deleteBooking,
-  sendEmail,
   contactus,
 };
