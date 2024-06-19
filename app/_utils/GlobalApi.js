@@ -6,7 +6,7 @@ const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 // http://localhost:1337/api
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:1337/api",
+  baseURL: "https://booking-server-ng9k.onrender.com/api",
   headers: {
     Authorization: `Bearer ${API_KEY}`,
   },
