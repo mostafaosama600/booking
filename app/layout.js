@@ -1,8 +1,8 @@
+import Header from "./_components/Header";
+import Footer from "./_components/Footer";
+import { Toaster } from "sonner";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Header from "./_components/Header";
-import { Toaster } from "sonner";
-import Footer from "./_components/Footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
