@@ -3,10 +3,14 @@
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 function myProfile() {
   const { user } = useKindeBrowserClient();
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   return (
     <section className="bg-gray-100 my-10 rounded">
