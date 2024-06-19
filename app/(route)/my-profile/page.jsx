@@ -34,21 +34,21 @@ function myProfile() {
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form action="#" className="space-y-4">
               <div>
-                {user?.picture === null ? (
+                {user?.picture ? (
                   <Image
                     src={user?.picture}
                     className="rounded-full cursor-pointer"
                     alt="user picture"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                   />
                 ) : (
                   <Image
-                    src="/logo.svg"
+                    src="/avatar.webp" // Provide a fallback image source here
                     className="rounded-full cursor-pointer"
                     alt="user picture"
-                    width={50}
-                    height={50}
+                    width={40}
+                    height={40}
                   />
                 )}
               </div>

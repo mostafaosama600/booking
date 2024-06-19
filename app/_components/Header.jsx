@@ -71,20 +71,18 @@ function Header() {
             {user?.picture ? (
               <Image
                 src={user?.picture}
-                alt="profile-image"
+                className="rounded-full cursor-pointer"
+                alt="user picture"
                 width={40}
                 height={40}
-                className="rounded-full"
               />
             ) : (
               <Image
-                src={
-                  "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
-                }
-                alt="profile-image"
+                src="/avatar.webp" // Provide a fallback image source here
+                className="rounded-full cursor-pointer"
+                alt="user picture"
                 width={40}
                 height={40}
-                className="rounded-full"
               />
             )}
           </PopoverTrigger>
