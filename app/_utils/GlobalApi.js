@@ -29,6 +29,7 @@ const getUserBookingList = (userEmail) =>
 
 const deleteBooking = (id) => axiosClient.delete("/appointments/" + id);
 const sendEmail = (data) => axios.post("/api/sendEmail", data);
+const contactus = (data) => axiosClient.post("/contacts", data);
 
 export default {
   getCategory,
@@ -39,4 +40,5 @@ export default {
   getUserBookingList,
   deleteBooking,
   sendEmail,
+  contactus,
 };

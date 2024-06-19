@@ -1,6 +1,35 @@
-import React from "react";
+"use client";
+
+import GlobalApi from "@/app/_utils/GlobalApi";
+import { Button } from "@/components/ui/button";
+import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import { useState } from "react";
+import { toast } from "sonner";
 
 function Contact() {
+  const { user } = useKindeBrowserClient();
+  const [email, setEmail] = useState("");
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+
+  const contactWithMessage = (event) => {
+    event.preventDefault();
+
+    const data = {
+      data: {
+        email: email || user.email,
+        title: title,
+        message: message,
+      },
+    };
+
+    console.log(data);
+    GlobalApi.contactus(data).then((resp) => {
+      console.log(resp);
+      toast("Message has been sent");
+    });
+  };
+
   return (
     <section className="bg-white">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -19,60 +48,66 @@ function Contact() {
             </h1>
 
             <p className="mt-4 leading-relaxed text-gray-500">
-              Here you can send your rebort or message and we will find you as
-              soon as possible hit us now.
+              Here you can send your report or message and we will respond as
+              soon as possible. Hit us up now.
             </p>
 
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form
+              onSubmit={contactWithMessage}
+              className="mt-8 grid grid-cols-6 gap-6"
+            >
               <div className="col-span-6">
                 <label
-                  htmlFor="Email"
+                  htmlFor="email"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Email
                 </label>
-
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
-                  id="Email"
+                  id="email"
                   name="email"
                   className="mt-1 p-3 border w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
               <div className="col-span-6">
                 <label
-                  htmlFor="Email"
+                  htmlFor="title"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Title
                 </label>
-
                 <input
+                  onChange={(e) => setTitle(e.target.value)}
                   type="text"
-                  id="text"
-                  name="text"
+                  id="title"
+                  name="title"
                   className="mt-1 p-3 border w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
               <div className="col-span-6">
                 <label
-                  htmlFor="Email"
+                  htmlFor="message"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Message
                 </label>
-
                 <textarea
+                  onChange={(e) => setMessage(e.target.value)}
                   name="message"
-                  className="mt-1 p-3 textarea border w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                   id="message"
+                  className="mt-1 p-3 textarea border w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
                 ></textarea>
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
-                <button className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500">
+                <Button
+                  type="submit"
+                  className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
+                >
                   Send
-                </button>
+                </Button>
               </div>
             </form>
           </div>
