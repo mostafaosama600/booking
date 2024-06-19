@@ -6,7 +6,7 @@ const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 // http://localhost:1337/api
 
 const axiosClient = axios.create({
-  baseURL: "https://booking-server-ng9k.onrender.com/api",
+  baseURL: "http://localhost:1337/api",
   headers: {
     Authorization: `Bearer ${API_KEY}`,
   },
@@ -24,7 +24,7 @@ const getUserBookingList = (userEmail) =>
   axiosClient.get(
     "/appointments?[filters][email][$eq]=" +
       userEmail +
-      "&populate[doctor][populate][image][populate][0]=url&populate=*"
+      "&populate[doctors][populate][image][populate][0]=url&populate=*"
   );
 
 const deleteBooking = (id) => axiosClient.delete("/appointments/" + id);
