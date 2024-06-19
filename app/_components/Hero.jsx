@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { LoginLink } from "@kinde-oss/kinde-auth-nextjs";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function Hero() {
@@ -35,7 +36,7 @@ function Hero() {
               repellat.
             </p>
             <LoginLink>
-              <Button className="mt-10">Explore Now</Button>
+              <Button className="mt-5">Start Today</Button>
             </LoginLink>
           </div>
         </div>
