@@ -30,10 +30,6 @@ function myProfile() {
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form action="#" className="space-y-4">
               <div>
-                <label className="text-sm" htmlFor="name">
-                  Your picture
-                </label>
-
                 <Image
                   src={user?.picture}
                   className="rounded-full cursor-pointer"
