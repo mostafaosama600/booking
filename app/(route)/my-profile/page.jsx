@@ -1,6 +1,7 @@
 "use client";
 
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -28,6 +29,19 @@ function myProfile() {
 
           <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form action="#" className="space-y-4">
+              <div>
+                <label className="text-sm" htmlFor="name">
+                  Your picture
+                </label>
+
+                <Image
+                  src={user?.picture}
+                  className="rounded-full cursor-pointer"
+                  alt="user picture"
+                  width={50}
+                  height={50}
+                />
+              </div>
               <div>
                 <label className="text-sm" htmlFor="name">
                   Your name
