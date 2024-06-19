@@ -2,23 +2,14 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import React, { useEffect, useState } from "react";
 import GlobalApi from "../_utils/GlobalApi";
 import Image from "next/image";
 import Link from "next/link";
+import useFetchData from "../_hooks/useFetchData";
 
 function CategorySearch() {
-  const [categoryList, setCategoryList] = useState([]);
-  useEffect(() => {
-    getCategoryList();
-  }, []);
+  const { data: categoryList } = useFetchData(GlobalApi.getCategory);
 
-  const getCategoryList = () => {
-    GlobalApi.getCategory().then((resp) => {
-      console.log(resp.data.data);
-      setCategoryList(resp.data.data);
-    });
-  };
   return (
     <div className="mb-10 items-center px-5 flex flex-col gap-2">
       <h2

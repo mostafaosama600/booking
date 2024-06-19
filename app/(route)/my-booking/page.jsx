@@ -20,11 +20,6 @@ function MyBooking() {
     });
   };
 
-  /**
-   * Used to Filter User Booking
-   * @param {} type
-   * @returns
-   */
   const filterUserBooking = (type) => {
     const result = bookingList.filter((item) =>
       type == "upcoming"

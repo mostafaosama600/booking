@@ -6,18 +6,11 @@ import GlobalApi from "@/app/_utils/GlobalApi";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import useFetchData from "@/app/_hooks/useFetchData";
 
 function ExploreDoctors() {
-  const [doctorList, setDoctorList] = useState([]);
-  useEffect(() => {
-    getDoctorList();
-  }, []);
-  const getDoctorList = () => {
-    GlobalApi.getDoctorList().then((resp) => {
-      console.log(resp.data.data);
-      setDoctorList(resp.data.data);
-    });
-  };
+  const { data: doctorList } = useFetchData(GlobalApi.getDoctorList);
+
   return (
     <div className="my-10 px-8">
       <h2 className="font-bold text-xl">Explore All Doctors</h2>

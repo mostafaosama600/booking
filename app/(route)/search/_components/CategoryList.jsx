@@ -1,6 +1,5 @@
 "use client";
 import GlobalApi from "@/app/_utils/GlobalApi";
-import React, { useEffect, useState } from "react";
 import {
   Command,
   CommandEmpty,
@@ -12,21 +11,13 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import useFetchData from "@/app/_hooks/useFetchData";
 function CategoryList() {
-  const [categoryList, setCategoryList] = useState([]);
   const params = usePathname();
   const category = params.split("/")[2];
-  useEffect(() => {
-    getCategoryList();
-  }, []);
 
-  //
-  const getCategoryList = () => {
-    GlobalApi.getCategory().then((resp) => {
-      console.log(resp.data.data);
-      setCategoryList(resp.data.data);
-    });
-  };
+  const { data: categoryList } = useFetchData(GlobalApi.getCategory);
+
   return (
     <div className="h-screen fixed mt-5 flex flex-col">
       <Command>
