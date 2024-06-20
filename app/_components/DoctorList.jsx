@@ -9,7 +9,7 @@ function DoctorList({ doctorList, heading = "Popular Doctors", className }) {
       <h2 className="font-bold text-xl">{heading}</h2>
 
       <div
-        className={`grid grid-cols-2 
+        className={`grid grid-cols-1 
         sm:grid-cols-2 md:grid-cols-3
         gap-7 mt-4
          
