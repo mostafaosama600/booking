@@ -1,7 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
 import GlobalApi from "../_utils/GlobalApi";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,14 +18,6 @@ function CategorySearch() {
       <h2 className="text-gray-500">
         Search Your Doctor and Book Appointment in one click
       </h2>
-
-      <div className="flex w-full mt-3 max-w-sm items-center space-x-2">
-        <Input type="text" placeholder="Search..." />
-        <Button type="submit">
-          <Search className="h-4 w-4 mr-2" />
-          Search
-        </Button>
-      </div>
 
       {/* Display List of Category  */}
       <div className="grid grid-cols-2 mt-5 md:grid-cols-4 lg:grid-cols-6 ">
