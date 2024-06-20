@@ -76,7 +76,7 @@ function BookAppointment({ doctor }) {
         <DialogHeader>
           <DialogTitle>Book Appointment</DialogTitle>
           <DialogDescription>
-            <div>
+            <div className="inner-scroll">
               <div className="grid grid-cols-1 md:grid-cols-2 mt-1">
                 {/* Calender  */}
                 <div className="flex flex-col gap-3 items-baseline">

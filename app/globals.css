@@ -78,3 +78,10 @@
 .textarea {
   height: 150px !important;
 }
+
+.inner-scroll {
+  width: 100%;
+  height: 420px;
+  overflow-y: auto;
+  padding: 10px;
+}
