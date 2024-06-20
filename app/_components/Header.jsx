@@ -7,14 +7,17 @@ import {
 } from "@kinde-oss/kinde-auth-nextjs";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { MenuIcon, CopyX } from "lucide-react";
 
 function Header() {
+  const [activeMenu, setActiveMenu] = useState(false);
+
   const Menu = [
     {
       id: 1,
@@ -43,13 +46,42 @@ function Header() {
   useEffect(() => {
     console.log(user);
   }, [user]);
+
   return (
     <div
       className="flex items-center 
     justify-between p-4 shadow-sm "
     >
       <div className="flex items-center gap-10">
-        <Image src="/logo.svg" alt="logo" width={180} height={80} />
+        <div>
+          <MenuIcon
+            onClick={() => setActiveMenu(!activeMenu)}
+            className="md:hidden flex cursor-pointer"
+          />
+          {activeMenu && (
+            <ul className="bg-white z-50 fixed left-0 top-0 w-full p-2">
+              {Menu.map((item, index) => (
+                <Link href={item.path} key={index}>
+                  <li className="cursor-pointer my-5 rounded shadow-sm p-2 mx-3">
+                    {item.name}
+                  </li>
+                </Link>
+              ))}
+              <CopyX
+                className="cursor-pointer mb-3 mx-3"
+                onClick={() => setActiveMenu(!activeMenu)}
+              />
+            </ul>
+          )}
+        </div>
+
+        <Image
+          src="/logo.svg"
+          className="md:flex gap-8 hidden"
+          alt="logo"
+          width={180}
+          height={80}
+        />
         <ul className="md:flex gap-8 hidden">
           {Menu.map((item, index) => (
             <Link href={item.path} key={index}>
