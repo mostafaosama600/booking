@@ -26,7 +26,7 @@ function CategoryList() {
       <div className="h-screen fixed mt-5 flex flex-col">
         <MenuIcon
           onClick={() => setActiveMenu(!activeMenu)}
-          className="md:flex lg:flex cursor-pointer"
+          className="md:flex lg:flex cursor-pointer mx-4"
         />
         {activeMenu && (
           <Command>
