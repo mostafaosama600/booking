@@ -15,7 +15,6 @@ function DoctorDetail({ doctor }) {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 border-[1px] p-5 mt-5 rounded-lg">
-        {/* Doctor Image  */}
         <div>
           <Image
             src={doctor?.attributes?.image?.data?.attributes?.url}
@@ -25,7 +24,6 @@ function DoctorDetail({ doctor }) {
             className="rounded-lg w-full h-[280px] object-cover"
           />
         </div>
-        {/* Doctor Info  */}
         <div className="col-span-2 mt-5 flex md:px-10 flex-col gap-3 items-baseline">
           <h2 className="font-bold text-2xl">{doctor?.attributes?.name}</h2>
           <h2 className="flex gap-2 text-gray-500 text-md">
