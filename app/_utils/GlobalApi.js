@@ -2,9 +2,6 @@ const { default: axios } = require("axios");
 
 const API_KEY = process.env.NEXT_PUBLIC_STRAPI_API_KEY;
 
-// https://booking-server-ng9k.onrender.com/api
-// http://localhost:1337/api
-
 const axiosClient = axios.create({
   baseURL: "https://booking-server-ng9k.onrender.com/api",
   headers: {
