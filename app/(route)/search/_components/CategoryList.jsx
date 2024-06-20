@@ -12,21 +12,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import useFetchData from "@/app/_hooks/useFetchData";
-import { MenuIcon } from "lucide-react";
+import { List } from "lucide-react";
 import { useState } from "react";
 function CategoryList() {
   const params = usePathname();
   const category = params.split("/")[2];
 
   const { data: categoryList } = useFetchData(GlobalApi.getCategory);
-  const [activeMenu, setActiveMenu] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(true);
 
   return (
     <>
       <div className="h-screen fixed mt-5 flex flex-col">
-        <MenuIcon
+        <List
           onClick={() => setActiveMenu(!activeMenu)}
-          className="md:flex lg:flex cursor-pointer border"
+          className="md:flex lg:flex cursor-pointer"
         />
         {activeMenu && (
           <Command>
