@@ -12,7 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import useFetchData from "@/app/_hooks/useFetchData";
-import { List } from "lucide-react";
+import { MenuIcon } from "lucide-react";
 import { useState } from "react";
 function CategoryList() {
   const params = usePathname();
@@ -24,7 +24,7 @@ function CategoryList() {
   return (
     <>
       <div className="h-screen fixed mt-5 flex flex-col">
-        <List
+        <MenuIcon
           onClick={() => setActiveMenu(!activeMenu)}
           className="md:flex lg:flex cursor-pointer mx-4 p-4"
         />
