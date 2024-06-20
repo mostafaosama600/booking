@@ -5,9 +5,7 @@ import GlobalApi from "@/app/_utils/GlobalApi";
 import React, { useEffect, useState } from "react";
 
 function Search({ params }) {
-  useEffect(() => {
-    console.log(params?.cname);
-  }, [params?.cname]);
+  useEffect(() => {}, [params?.cname]);
 
   const { data: doctorList } = useFetchData(
     () => GlobalApi.getDoctorByCategory(params?.cname),

@@ -11,7 +11,6 @@ import React from "react";
 import BookAppointment from "./BookAppointment";
 
 function DoctorDetail({ doctor }) {
-  console.log("doctor", doctor);
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 border-[1px] p-5 mt-5 rounded-lg">

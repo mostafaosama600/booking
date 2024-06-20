@@ -9,7 +9,7 @@ const useFetchData = (apiCall, dependencies = []) => {
         const response = await apiCall();
         setData(response.data.data);
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
 

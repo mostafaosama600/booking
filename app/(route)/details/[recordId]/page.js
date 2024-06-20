@@ -5,8 +5,6 @@ import DoctorDetail from "../_components/DoctorDetail";
 import DoctorSuggestionList from "../_components/DoctorSuggestionList";
 
 function Details({ params }) {
-  console.log(params);
-
   const [doctor, setDoctor] = useState(null); // Initialize doctor as null
   useEffect(() => {
     getDoctorById();

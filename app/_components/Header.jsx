@@ -43,9 +43,7 @@ function Header() {
 
   const { user } = useKindeBrowserClient();
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  useEffect(() => {}, [user]);
 
   return (
     <div

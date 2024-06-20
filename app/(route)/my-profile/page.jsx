@@ -8,9 +8,7 @@ import React, { useEffect } from "react";
 function myProfile() {
   const { user } = useKindeBrowserClient();
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  useEffect(() => {}, [user]);
 
   return (
     <section className="bg-gray-100 my-10 rounded">

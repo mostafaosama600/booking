@@ -8,9 +8,7 @@ import Link from "next/link";
 
 function BookingList({ bookingList, expired, updateRecord }) {
   const onDeleteBooking = (item) => {
-    console.log(item);
     GlobalApi.deleteBooking(item.id).then((resp) => {
-      console.log(resp);
       if (resp) {
         toast("Booking Delete Successfully!");
         updateRecord();

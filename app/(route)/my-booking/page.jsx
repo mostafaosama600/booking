@@ -15,7 +15,6 @@ function MyBooking() {
 
   const getUserBookingList = () => {
     GlobalApi.getUserBookingList(user?.email).then((resp) => {
-      console.log(resp.data.data);
       setBookingList(resp.data.data);
     });
   };
@@ -26,7 +25,6 @@ function MyBooking() {
         ? new Date(item.attributes.date) >= new Date()
         : new Date(item.attributes.date) <= new Date()
     );
-    console.log(result);
     return result;
   };
   return (

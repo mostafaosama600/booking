@@ -59,7 +59,6 @@ function BookAppointment({ doctor }) {
       },
     };
     GlobalApi.bookAppointment(data).then((resp) => {
-      console.log(resp);
       toast("Booking Confirmation sent on Email");
     });
   };
