@@ -23,11 +23,11 @@ function CategoryList() {
 
   return (
     <>
-      <MenuIcon
-        onClick={() => setActiveMenu(!activeMenu)}
-        className="md:hidden flex cursor-pointer"
-      />
       <div className="h-screen fixed mt-5 flex flex-col">
+        <MenuIcon
+          onClick={() => setActiveMenu(!activeMenu)}
+          className="md:hidden lg:flex cursor-pointer"
+        />
         {activeMenu && (
           <Command>
             <CommandInput placeholder="Type a command or search..." />
