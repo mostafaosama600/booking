@@ -10,11 +10,8 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section  */}
       <Hero />
-      {/* Search bar + Categories  */}
       <CategorySearch />
-      {/* Popular Doctor List  */}
       <DoctorList doctorList={doctorList} className={"lg:grid-cols-4"} />
     </div>
   );
