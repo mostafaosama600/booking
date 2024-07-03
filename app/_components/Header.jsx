@@ -31,11 +31,16 @@ function Header() {
     },
     {
       id: 3,
+      name: "3D Jaw Model",
+      path: "/jaw-model",
+    },
+    {
+      id: 4,
       name: "Contact Us",
       path: "/contact",
     },
     {
-      id: 4,
+      id: 5,
       name: "About Us",
       path: "/about",
     },
