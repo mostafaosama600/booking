@@ -8,6 +8,7 @@ import useFetchData from "./_hooks/useFetchData";
 export default function Home() {
   const { data: doctorList } = useFetchData(GlobalApi.getDoctorList);
 
+  //done
   return (
     <div>
       <Hero />
